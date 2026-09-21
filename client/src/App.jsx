@@ -14,13 +14,13 @@ import Loading from "./components/Loading";
 import WeatherCharts from "./components/WeatherCharts";
 import AIChat from "./components/AIChat";
 
-
 import FarmProfile from "./pages/FarmProfile";
 import FertilizerAdvisor from "./pages/FertilizerAdvisor";
 import PestDiseaseAdvisor from "./pages/PestDiseaseAdvisor";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FarmingHistory from "./pages/FarmingHistory";
+
 import "./css/App.css";
 import "./css/AIChat.css";
 import "./css/Navbar.css";
@@ -32,7 +32,7 @@ import "./css/AlertCard.css";
 import "./css/WeatherCharts.css";
 import "./css/CropInfoCard.css";
 import "./css/StatsCard.css";
-import "./css/loading.css";
+import "./css/Loading.css";
 import "./css/FarmProfile.css";
 import "./css/FarmingHistory.css";
 import "./css/FertilizerAdvisor.css";
@@ -40,6 +40,14 @@ import "./css/PestDiseaseAdvisor.css";
 import "./css/Login.css";
 import "./css/Register.css";
 
+
+// ==========================================
+// API BASE URL
+// ==========================================
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+console.log("API URL:", API_URL);
 
 
 // ==========================================
@@ -113,7 +121,7 @@ function Home({
 
 
             {/* ==========================================
-                DASHBOARD QUICK SUMMARY
+                DASHBOARD SUMMARY
             ========================================== */}
 
             {!loading && weatherData && (
@@ -394,7 +402,8 @@ function App() {
 
     const getAuthConfig = () => {
 
-        const token = localStorage.getItem("token");
+        const token =
+            localStorage.getItem("token");
 
         return {
             headers: {
@@ -418,7 +427,8 @@ function App() {
                 // CHECK LOGIN
                 // ==========================================
 
-                const token = localStorage.getItem("token");
+                const token =
+                    localStorage.getItem("token");
 
                 if (!token) {
                     return;
@@ -429,10 +439,12 @@ function App() {
                 // GET SAVED FARM
                 // ==========================================
 
-                const farmResponse = await axios.get(
-                    `${import.meta.env.VITE_API_URL}/api/farms`,
-                    getAuthConfig()
-                );
+                const farmResponse =
+                    await axios.get(
+                        `${API_URL}/api/farms`,
+                        getAuthConfig()
+                    );
+
 
                 const farms =
                     farmResponse.data.data;
@@ -446,7 +458,6 @@ function App() {
                     !farms ||
                     farms.length === 0
                 ) {
-
                     return;
                 }
 
@@ -512,11 +523,12 @@ function App() {
                     setError("");
 
 
-                    const weatherResponse = await axios.get(
-                        `${import.meta.env.VITE_API_URL}/api/weather?city=${encodeURIComponent(
-                            savedCity
-                        )}&crop=${savedCrop}&growthStage=${savedGrowthStage}&soilType=${savedSoil}&farmingActivity=${savedActivity}`
-                    );
+                    const weatherResponse =
+                        await axios.get(
+                            `${API_URL}/api/weather?city=${encodeURIComponent(
+                                savedCity
+                            )}&crop=${savedCrop}&growthStage=${savedGrowthStage}&soilType=${savedSoil}&farmingActivity=${savedActivity}`
+                        );
 
 
                     // ==========================================
@@ -610,11 +622,12 @@ function App() {
             // API REQUEST
             // ==========================================
 
-            const response = await axios.get(
-                `${import.meta.env.VITE_API_URL}/api/weather?city=${encodeURIComponent(
-                    city
-                )}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
-            );
+            const response =
+                await axios.get(
+                    `${API_URL}/api/weather?city=${encodeURIComponent(
+                        city
+                    )}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
+                );
 
 
             // ==========================================
@@ -765,9 +778,10 @@ function App() {
                     // API REQUEST
                     // ==========================================
 
-                   const response = await axios.get(
-    `${import.meta.env.VITE_API_URL}/api/weather?lat=${latitude}&lon=${longitude}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
-);
+                    const response =
+                        await axios.get(
+                            `${API_URL}/api/weather?lat=${latitude}&lon=${longitude}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
+                        );
 
 
                     // ==========================================
@@ -977,12 +991,26 @@ function App() {
                         <Login />
                     }
                 />
+
+
+                {/* ==========================================
+                    FARMING HISTORY
+                ========================================== */}
+
                 <Route
                     path="/farming-history"
-                    element={<FarmingHistory />}
+                    element={
+                        <FarmingHistory />
+                    }
                 />
 
             </Routes>
+
+
+            {/* ==========================================
+                AI CHAT
+            ========================================== */}
+
             <AIChat />
 
         </BrowserRouter>

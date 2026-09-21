@@ -1,5 +1,7 @@
 const axios = require("axios");
-const generateRecommendations = require("../services/recommendationService");
+const {
+    generateRecommendations
+} = require("../services/recommendationService");
 const Crop = require("../models/crop");
 
 const getWeather = async (req, res) => {
