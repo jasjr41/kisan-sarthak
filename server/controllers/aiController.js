@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const Farm = require("../models/Farm");
-const Crop = require("../models/Crop");
+const Crop = require("../models/crop");
 const FarmingHistory = require("../models/FarmingHistory");
 
 const {
