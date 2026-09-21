@@ -430,10 +430,9 @@ function App() {
                 // ==========================================
 
                 const farmResponse = await axios.get(
-                    "http://localhost:5000/api/farms",
+                    `${import.meta.env.VITE_API_URL}/api/farms`,
                     getAuthConfig()
                 );
-
 
                 const farms =
                     farmResponse.data.data;
@@ -513,14 +512,11 @@ function App() {
                     setError("");
 
 
-                    const weatherResponse =
-                        await axios.get(
-
-                            `http://localhost:5000/api/weather?city=${encodeURIComponent(
-                                savedCity
-                            )}&crop=${savedCrop}&growthStage=${savedGrowthStage}&soilType=${savedSoil}&farmingActivity=${savedActivity}`
-
-                        );
+                    const weatherResponse = await axios.get(
+                        `${import.meta.env.VITE_API_URL}/api/weather?city=${encodeURIComponent(
+                            savedCity
+                        )}&crop=${savedCrop}&growthStage=${savedGrowthStage}&soilType=${savedSoil}&farmingActivity=${savedActivity}`
+                    );
 
 
                     // ==========================================
@@ -615,11 +611,9 @@ function App() {
             // ==========================================
 
             const response = await axios.get(
-
-                `http://localhost:5000/api/weather?city=${encodeURIComponent(
+                `${import.meta.env.VITE_API_URL}/api/weather?city=${encodeURIComponent(
                     city
                 )}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
-
             );
 
 
@@ -771,12 +765,9 @@ function App() {
                     // API REQUEST
                     // ==========================================
 
-                    const response =
-                        await axios.get(
-
-                            `http://localhost:5000/api/weather?lat=${latitude}&lon=${longitude}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
-
-                        );
+                   const response = await axios.get(
+    `${import.meta.env.VITE_API_URL}/api/weather?lat=${latitude}&lon=${longitude}&crop=${crop}&growthStage=${growthStage}&soilType=${soilType}&farmingActivity=${farmingActivity}`
+);
 
 
                     // ==========================================

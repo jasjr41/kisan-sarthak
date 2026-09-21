@@ -61,7 +61,7 @@ function FarmProfile() {
 
                 // Load user's farm
                 const response = await axios.get(
-                    "http://localhost:5000/api/farms",
+                    `${import.meta.env.VITE_API_URL}/api/farms`,
                     getAuthConfig()
                 );
 
@@ -147,7 +147,7 @@ function FarmProfile() {
             // UPDATE
             if (farmId) {
                 const response = await axios.put(
-                    `http://localhost:5000/api/farms/${farmId}`,
+                    `${import.meta.env.VITE_API_URL}/api/farms/${farmId}`,
                     data,
                     getAuthConfig()
                 );
@@ -161,12 +161,8 @@ function FarmProfile() {
             // CREATE
             else {
                 const response = await axios.post(
-                    "http://localhost:5000/api/farms",
-                    data,
-                    getAuthConfig()
-                );
-
-                setFarmId(response.data.data._id);
+                    `${import.meta.env.VITE_API_URL}/api/farming-history`,
+                    setFarmId(response.data.data._id));
 
                 setMessage(
                     response.data.message ||

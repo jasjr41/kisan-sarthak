@@ -41,9 +41,9 @@ function Login() {
             setLoading(true);
 
             const response = await axios.post(
-                "http://localhost:5000/api/auth/login",
-                formData
-            );
+    `${import.meta.env.VITE_API_URL}/api/auth/login`,
+    formData
+);
 
             const token = response.data.data.token;
             const user = response.data.data.user;

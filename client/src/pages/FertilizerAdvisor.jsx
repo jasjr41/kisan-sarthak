@@ -25,8 +25,12 @@ function FertilizerAdvisor() {
       try {
         const [fertilizerResponse, deficiencyResponse] =
           await Promise.all([
-            axios.get("http://localhost:5000/api/fertilizers"),
-            axios.get("http://localhost:5000/api/deficiencies")
+            axios.get(
+              `${import.meta.env.VITE_API_URL}/api/fertilizers`
+            ),
+            axios.get(
+              `${import.meta.env.VITE_API_URL}/api/deficiencies`
+            )
           ]);
 
         setFertilizers(fertilizerResponse.data.data);
@@ -64,72 +68,72 @@ function FertilizerAdvisor() {
   // DETECT DEFICIENCY
   // ==========================================
   const detectDeficiency = () => {
-  if (!selectedSymptom) {
-    setDetectedDeficiency(null);
-    setRecommendations([]);
-    return;
-  }
-
-  const symptomMatches = cropDeficiencies.filter(
-    (deficiency) =>
-      deficiency.symptoms.some(
-        (symptom) =>
-          symptom.toLowerCase() ===
-          selectedSymptom.toLowerCase()
-      )
-  );
-
-  if (symptomMatches.length === 0) {
-    setDetectedDeficiency(null);
-    setRecommendations([]);
-    return;
-  }
-
-  // Store the first matching deficiency for the main result
-  const primaryDeficiency = symptomMatches[0];
-
-  setDetectedDeficiency(primaryDeficiency);
-
-  // Find fertilizers for the detected nutrient
-  const matchingFertilizers = fertilizers.filter(
-    (fertilizer) => {
-      const cropMatch = fertilizer.suitableCrops.some(
-        (item) =>
-          item.toLowerCase() === crop.toLowerCase()
-      );
-
-      const stageMatch = fertilizer.suitableStages.some(
-        (item) =>
-          item.toLowerCase() ===
-          growthStage.toLowerCase()
-      );
-
-      const soilMatch = fertilizer.suitableSoils.some(
-        (item) =>
-          item.toLowerCase() ===
-          soilType.toLowerCase()
-      );
-
-      const nutrientMatch = symptomMatches.some(
-        (deficiency) =>
-          fertilizer.nutrient
-            .toLowerCase()
-            .includes(
-              deficiency.nutrient.toLowerCase()
-            )
-      );
-
-      return (
-        cropMatch &&
-        stageMatch &&
-        soilMatch &&
-        nutrientMatch
-      );
+    if (!selectedSymptom) {
+      setDetectedDeficiency(null);
+      setRecommendations([]);
+      return;
     }
-  );
 
-  setRecommendations(matchingFertilizers);
-};
+    const symptomMatches = cropDeficiencies.filter(
+      (deficiency) =>
+        deficiency.symptoms.some(
+          (symptom) =>
+            symptom.toLowerCase() ===
+            selectedSymptom.toLowerCase()
+        )
+    );
+
+    if (symptomMatches.length === 0) {
+      setDetectedDeficiency(null);
+      setRecommendations([]);
+      return;
+    }
+
+    // Store the first matching deficiency for the main result
+    const primaryDeficiency = symptomMatches[0];
+
+    setDetectedDeficiency(primaryDeficiency);
+
+    // Find fertilizers for the detected nutrient
+    const matchingFertilizers = fertilizers.filter(
+      (fertilizer) => {
+        const cropMatch = fertilizer.suitableCrops.some(
+          (item) =>
+            item.toLowerCase() === crop.toLowerCase()
+        );
+
+        const stageMatch = fertilizer.suitableStages.some(
+          (item) =>
+            item.toLowerCase() ===
+            growthStage.toLowerCase()
+        );
+
+        const soilMatch = fertilizer.suitableSoils.some(
+          (item) =>
+            item.toLowerCase() ===
+            soilType.toLowerCase()
+        );
+
+        const nutrientMatch = symptomMatches.some(
+          (deficiency) =>
+            fertilizer.nutrient
+              .toLowerCase()
+              .includes(
+                deficiency.nutrient.toLowerCase()
+              )
+        );
+
+        return (
+          cropMatch &&
+          stageMatch &&
+          soilMatch &&
+          nutrientMatch
+        );
+      }
+    );
+
+    setRecommendations(matchingFertilizers);
+  };
 
   // ==========================================
   // NORMAL FERTILIZER ADVISORY

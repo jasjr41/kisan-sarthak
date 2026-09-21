@@ -31,9 +31,9 @@ function PestDiseaseAdvisor() {
                 setError("");
                 setSelectedProblem(null);
 
-                const response = await axios.get(
-                    `http://localhost:5000/api/pest-diseases?crop=${crop}`
-                );
+               const response = await axios.get(
+    `${import.meta.env.VITE_API_URL}/api/pest-diseases?crop=${crop}`
+);
 
                 setData(response.data.data || []);
             } catch (error) {

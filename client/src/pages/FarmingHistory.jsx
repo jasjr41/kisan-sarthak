@@ -97,7 +97,7 @@ function FarmingHistory() {
             }
 
             const response = await axios.get(
-                "http://localhost:5000/api/farming-history",
+                `${import.meta.env.VITE_API_URL}/api/farming-history`,
                 getAuthConfig()
             );
 
@@ -136,9 +136,9 @@ function FarmingHistory() {
             }
 
             const response = await axios.get(
-                "http://localhost:5000/api/farms",
-                getAuthConfig()
-            );
+    `${import.meta.env.VITE_API_URL}/api/farms`,
+    getAuthConfig()
+);
 
             const farms = response.data.data || [];
 
@@ -211,8 +211,8 @@ function FarmingHistory() {
                 return;
             }
 
-            const response = await axios.post(
-                "http://localhost:5000/api/farming-history",
+           const response = await axios.post(
+    `${import.meta.env.VITE_API_URL}/api/farming-history`,
                 {
                     date: formData.date,
                     crop: formData.crop,
@@ -284,10 +284,10 @@ function FarmingHistory() {
             setError("");
             setMessage("");
 
-            await axios.delete(
-                `http://localhost:5000/api/farming-history/${id}`,
-                getAuthConfig()
-            );
+           const response = await axios.get(
+    `${import.meta.env.VITE_API_URL}/api/farming-history`,
+    getAuthConfig()
+);
 
             setHistory((previousHistory) =>
                 previousHistory.filter(
@@ -1041,7 +1041,7 @@ function FarmingHistory() {
                                             }
                                         >
                                             {deletingId ===
-                                            item._id
+                                                item._id
                                                 ? "Deleting..."
                                                 : "🗑️ Delete"}
                                         </button>
