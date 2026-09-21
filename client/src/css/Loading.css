@@ -1,0 +1,150 @@
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-container {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 50px auto;
+    padding: 45px 30px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 83, 45, 0.08);
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+========================================================= */
+
+.loading-spinner {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    border: 5px solid #dcfce7;
+    border-top: 5px solid #16a34a;
+
+    border-radius: 50%;
+
+    animation: loading-spin 0.9s linear infinite;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.loading-container h3 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.loading-container p {
+    max-width: 520px;
+
+    margin: 10px 0 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SPINNER ANIMATION
+========================================================= */
+
+@keyframes loading-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .loading-container {
+        width: 92%;
+
+        padding: 40px 25px;
+    }
+
+    .loading-container h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .loading-container {
+        width: 94%;
+
+        margin: 35px auto;
+
+        padding: 35px 20px;
+
+        border-radius: 16px;
+    }
+
+    .loading-spinner {
+        width: 48px;
+        height: 48px;
+
+        border-width: 4px;
+
+        margin-bottom: 20px;
+    }
+
+    .loading-container h3 {
+        font-size: 19px;
+    }
+
+    .loading-container p {
+        font-size: 14px;
+    }
+
+}

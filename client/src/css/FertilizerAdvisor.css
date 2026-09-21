@@ -1,0 +1,846 @@
+/* =========================================================
+   FERTILIZER ADVISOR
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.fertilizer-page {
+    min-height: 100vh;
+
+    padding-bottom: 80px;
+
+    background: #f4f8f3;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.fertilizer-page .page-header {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 55px 20px 35px;
+
+    text-align: center;
+}
+
+
+.fertilizer-page .page-header h1 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 42px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.5px;
+}
+
+
+.fertilizer-page .page-header p {
+    max-width: 720px;
+
+    margin: 14px auto 0;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FERTILIZER FORM
+========================================================= */
+
+.fertilizer-form {
+    width: calc(100% - 40px);
+
+    max-width: 1050px;
+
+    margin: 10px auto 35px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+
+    /* Two fields per row */
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.fertilizer-form .form-group {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 0;
+}
+
+
+.fertilizer-form .form-group:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.fertilizer-form label {
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   FORM SELECT
+========================================================= */
+
+.fertilizer-form select {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.fertilizer-form select:hover {
+    border-color: #86efac;
+}
+
+
+.fertilizer-form select:focus {
+    border-color: #22c55e;
+
+    background: #fafffb;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   ADVICE BUTTON
+========================================================= */
+
+.fertilizer-advice-button {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    margin-top: 3px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #14532d;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.fertilizer-advice-button:hover {
+    background: #166534;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(20, 83, 45, 0.18);
+}
+
+
+.fertilizer-advice-button:active {
+    transform: translateY(0);
+}
+
+
+.fertilizer-advice-button:disabled {
+    background: #86a98f;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SYMPTOM SECTION
+========================================================= */
+
+.symptom-section {
+    width: calc(100% - 40px);
+
+    max-width: 1050px;
+
+    margin: 0 auto 35px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    box-sizing: border-box;
+}
+
+
+.symptom-section h2 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 24px;
+}
+
+
+.symptom-section > p {
+    margin: 8px 0 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.symptom-form {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-end;
+}
+
+
+.symptom-form .form-group {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.symptom-form label {
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+.symptom-form select {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.symptom-form select:hover {
+    border-color: #86efac;
+}
+
+
+.symptom-form select:focus {
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   DEFICIENCY RESULT
+========================================================= */
+
+.deficiency-result {
+    width: calc(100% - 40px);
+
+    max-width: 1050px;
+
+    margin: 0 auto 35px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    box-sizing: border-box;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+
+    border-left: 5px solid #f59e0b;
+
+    border-radius: 15px;
+}
+
+
+.deficiency-icon {
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: #fef3c7;
+
+    font-size: 27px;
+}
+
+
+.deficiency-result h3 {
+    margin: 0 0 7px;
+
+    color: #92400e;
+
+    font-size: 19px;
+}
+
+
+.deficiency-result p {
+    margin: 0;
+
+    color: #78350f;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.deficiency-warning {
+    margin-top: 10px !important;
+
+    color: #92400e !important;
+
+    font-size: 13px !important;
+}
+
+
+/* =========================================================
+   FERTILIZER RESULTS
+========================================================= */
+
+.fertilizer-results {
+    width: calc(100% - 40px);
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+.fertilizer-results h2 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 28px;
+}
+
+
+.fertilizer-results > p {
+    margin: 7px 0 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FERTILIZER GRID
+========================================================= */
+
+.fertilizer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   FERTILIZER CARD
+========================================================= */
+
+.fertilizer-card {
+    min-height: 300px;
+
+    padding: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.055);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.fertilizer-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #bbf7d0;
+
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   FERTILIZER ICON
+========================================================= */
+
+.fertilizer-icon {
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    background: #f0fdf4;
+
+    font-size: 29px;
+}
+
+
+/* =========================================================
+   FERTILIZER CARD CONTENT
+========================================================= */
+
+.fertilizer-card h3 {
+    margin: 0 0 8px;
+
+    color: #14532d;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.fertilizer-card p {
+    margin: 0 0 12px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.fertilizer-card strong {
+    color: #334155;
+}
+
+
+.fertilizer-card ul {
+    margin: 8px 0 0;
+
+    padding-left: 20px;
+}
+
+
+.fertilizer-card li {
+    margin-bottom: 6px;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FERTILIZER NOTE
+========================================================= */
+
+.fertilizer-note {
+    margin-top: auto;
+
+    padding: 13px 14px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #dcfce7;
+
+    border-radius: 10px;
+
+    color: #166534;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.fertilizer-placeholder {
+    width: calc(100% - 40px);
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.055);
+
+    box-sizing: border-box;
+}
+
+
+.fertilizer-placeholder h3 {
+    margin: 0 0 8px;
+
+    color: #14532d;
+
+    font-size: 20px;
+}
+
+
+.fertilizer-placeholder p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.fertilizer-page .error-message {
+    width: calc(100% - 40px);
+
+    max-width: 1050px;
+
+    margin: 0 auto 30px;
+
+    padding: 18px 20px;
+
+    box-sizing: border-box;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    border-left: 5px solid #ef4444;
+
+    border-radius: 12px;
+
+    color: #991b1b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .fertilizer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .fertilizer-page .page-header {
+        padding-top: 40px;
+    }
+
+
+    .fertilizer-page .page-header h1 {
+        font-size: 32px;
+    }
+
+
+    .fertilizer-form,
+    .symptom-section {
+        width: calc(100% - 30px);
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        padding: 22px;
+    }
+
+
+    /* One field per row on mobile */
+
+    .fertilizer-form {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .fertilizer-advice-button {
+        grid-column: 1;
+    }
+
+
+    .symptom-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .fertilizer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .deficiency-result {
+        width: calc(100% - 30px);
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .fertilizer-results {
+        width: calc(100% - 30px);
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .fertilizer-page .page-header {
+        padding: 35px 15px 25px;
+    }
+
+
+    .fertilizer-page .page-header h1 {
+        font-size: 28px;
+    }
+
+
+    .fertilizer-page .page-header p {
+        font-size: 14px;
+    }
+
+
+    .fertilizer-form,
+    .symptom-section {
+        padding: 18px;
+    }
+
+
+    .fertilizer-form select,
+    .symptom-form select {
+        min-height: 50px;
+
+        padding: 11px 13px;
+
+        font-size: 14px;
+    }
+
+
+    .fertilizer-card {
+        padding: 20px;
+    }
+
+
+    .deficiency-result {
+        padding: 20px;
+
+        flex-direction: column;
+    }
+
+
+    .fertilizer-results h2 {
+        font-size: 24px;
+    }
+
+
+    .fertilizer-results {
+        width: calc(100% - 30px);
+    }
+}

@@ -1,0 +1,361 @@
+/* =========================================================
+   WEATHER CHARTS
+========================================================= */
+
+.weather-charts {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.weather-charts .charts-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.weather-charts .charts-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #16a34a;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.weather-charts .charts-header h2 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.weather-charts .charts-header p {
+    margin: 12px 0 0;
+
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CHART CARD
+========================================================= */
+
+.weather-charts .chart-card {
+    width: 100%;
+
+    margin-bottom: 24px;
+
+    padding: 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 25px rgba(20, 83, 45, 0.08);
+
+    overflow: visible;
+}
+
+.weather-charts .chart-card:last-child {
+    margin-bottom: 0;
+}
+
+.weather-charts .chart-card:hover {
+    box-shadow:
+        0 12px 30px rgba(20, 83, 45, 0.12);
+}
+
+
+/* =========================================================
+   CHART CARD HEADER
+========================================================= */
+
+.weather-charts .chart-card-header {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.weather-charts .chart-card-header h3 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.weather-charts .chart-card-header p {
+    margin: 10px 0 0;
+
+    color: #475569;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CHART CONTAINER
+
+   IMPORTANT:
+   ResponsiveContainer gets height={320}
+   directly from WeatherCharts.jsx.
+========================================================= */
+
+.weather-charts .chart-container {
+    width: 100%;
+    height: 320px;
+
+    position: relative;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RECHARTS CONTAINER
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-responsive-container {
+    width: 100% !important;
+    height: 320px !important;
+}
+
+
+/* =========================================================
+   RECHARTS WRAPPER
+
+   Do NOT force SVG width/height here.
+   Recharts controls its own SVG dimensions.
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-wrapper {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CARTESIAN GRID
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-cartesian-grid-horizontal
+line {
+    stroke: #e2e8f0;
+}
+
+.weather-charts
+.chart-container
+.recharts-cartesian-grid-vertical
+line {
+    stroke: #e2e8f0;
+}
+
+
+/* =========================================================
+   X / Y AXIS
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-cartesian-axis-line {
+    stroke: #cbd5e1;
+}
+
+.weather-charts
+.chart-container
+.recharts-cartesian-axis-tick-line {
+    stroke: #cbd5e1;
+}
+
+.weather-charts
+.chart-container
+.recharts-cartesian-axis-tick-value {
+    fill: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LINE CHART
+
+   Explicitly make Recharts lines visible.
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-line-curve {
+    stroke: #16a34a;
+    stroke-width: 3;
+}
+
+.weather-charts
+.chart-container
+.recharts-line-dot {
+    fill: #16a34a;
+    stroke: #ffffff;
+}
+
+
+/* =========================================================
+   BAR CHART
+
+   Explicitly make rainfall bars visible.
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-bar-rectangle {
+    fill: #3b82f6;
+}
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-tooltip-wrapper {
+    z-index: 100;
+}
+
+.weather-charts
+.chart-container
+.recharts-default-tooltip {
+    background: #ffffff !important;
+
+    border: 1px solid #dce8dc !important;
+
+    border-radius: 10px !important;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.weather-charts
+.chart-container
+.recharts-legend-wrapper {
+    font-size: 13px;
+}
+
+.weather-charts
+.chart-container
+.recharts-legend-item-text {
+    color: #475569 !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.weather-charts:has(.charts-header p:first-of-type) {
+    min-height: 100px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .weather-charts {
+        width: 92%;
+    }
+
+    .weather-charts .charts-header h2 {
+        font-size: 28px;
+    }
+
+    .weather-charts .chart-card {
+        padding: 20px;
+    }
+
+    .weather-charts .chart-container {
+        height: 320px;
+    }
+
+    .weather-charts
+    .chart-container
+    .recharts-responsive-container {
+        height: 320px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .weather-charts {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    .weather-charts .charts-header h2 {
+        font-size: 24px;
+    }
+
+    .weather-charts .charts-header p {
+        font-size: 15px;
+    }
+
+    .weather-charts .chart-card {
+        padding: 15px;
+
+        border-radius: 15px;
+    }
+
+    .weather-charts .chart-card-header h3 {
+        font-size: 19px;
+    }
+
+    .weather-charts .chart-card-header p {
+        font-size: 14px;
+    }
+
+    .weather-charts .chart-container {
+        height: 300px;
+    }
+
+    .weather-charts
+    .chart-container
+    .recharts-responsive-container {
+        height: 300px !important;
+    }
+}

@@ -1,0 +1,1118 @@
+/* =========================================================
+   PEST & DISEASE ADVISOR
+   ========================================================= */
+
+.pest-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 40px 0 70px;
+
+    background: #f4f8f3;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.pest-hero {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 20px auto 35px;
+
+    text-align: center;
+}
+
+
+.pest-hero-icon {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 50%;
+
+    font-size: 38px;
+
+    box-shadow:
+        0 8px 20px rgba(20, 83, 45, 0.08);
+}
+
+
+.pest-hero h1 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.pest-hero p {
+    max-width: 760px;
+
+    margin: 14px auto 0;
+
+    color: #64748b;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.pest-filter-card {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 35px;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 25px rgba(20, 83, 45, 0.08);
+}
+
+
+.pest-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #16a34a;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.pest-filter-header h2 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 27px;
+    font-weight: 800;
+}
+
+
+.pest-filter-header p {
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+.pest-filter-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+
+    font-size: 25px;
+}
+
+
+.pest-filter-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.pest-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.pest-form-group label {
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.pest-form-group select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    color: #1e293b;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.pest-form-group select:hover {
+    border-color: #94a3b8;
+}
+
+
+.pest-form-group select:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.pest-error {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 25px;
+
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    box-sizing: border-box;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+
+    color: #991b1b;
+}
+
+
+.pest-error > span {
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+.pest-error strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 15px;
+}
+
+
+.pest-error p {
+    margin: 0;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOADING / NO RESULTS PLACEHOLDER
+   ========================================================= */
+
+.pest-placeholder {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 35px auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 83, 45, 0.08);
+}
+
+
+.pest-loading-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dcfce7;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    animation: pest-pulse 1.5s ease-in-out infinite;
+}
+
+
+.pest-placeholder h3 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+.pest-placeholder p {
+    max-width: 500px;
+
+    margin: 10px auto 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+@keyframes pest-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 0.75;
+    }
+}
+
+
+/* =========================================================
+   RESULTS SECTION
+   ========================================================= */
+
+.pest-results {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+.pest-results-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.pest-results-header h2 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 29px;
+    font-weight: 800;
+}
+
+
+.pest-results-header p {
+    margin: 8px 0 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+
+.pest-count {
+    min-width: 95px;
+
+    padding: 12px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(20, 83, 45, 0.06);
+}
+
+
+.pest-count strong {
+    color: #14532d;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+.pest-count span {
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PEST GRID
+   ========================================================= */
+
+.pest-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   PEST CARD
+   ========================================================= */
+
+.pest-card {
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 18px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 6px 20px rgba(20, 83, 45, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.pest-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #bbf7d0;
+
+    box-shadow:
+        0 12px 28px rgba(20, 83, 45, 0.12);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.pest-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+}
+
+
+.pest-card-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0fdf4;
+
+    border: 1px solid #dcfce7;
+    border-radius: 13px;
+
+    font-size: 27px;
+}
+
+
+.pest-type {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.pest-type-pest {
+    color: #92400e;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+}
+
+
+.pest-type-disease {
+    color: #991b1b;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.pest-card h3 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+
+.pest-card-description {
+    min-height: 52px;
+
+    margin: 10px 0 18px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SEVERITY
+   ========================================================= */
+
+.pest-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-top: 1px solid #eef2f0;
+    border-bottom: 1px solid #eef2f0;
+}
+
+
+.meta-label {
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.severity-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.severity-high {
+    color: #991b1b;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+}
+
+
+.severity-medium {
+    color: #92400e;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+}
+
+
+.severity-low {
+    color: #166534;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* =========================================================
+   CARD INFO
+   ========================================================= */
+
+.pest-card-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin: 15px 0;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+
+.pest-card-info span {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   DETAILS BUTTON
+   ========================================================= */
+
+.pest-details-button {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+
+    background: #f0fdf4;
+    color: #166534;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.pest-details-button span {
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+}
+
+
+.pest-details-button:hover {
+    background: #14532d;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+.pest-details-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+   ========================================================= */
+
+.pest-detail-section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    scroll-margin-top: 25px;
+}
+
+
+.pest-detail-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 10px 30px rgba(20, 83, 45, 0.08);
+}
+
+
+/* =========================================================
+   DETAIL HEADER
+   ========================================================= */
+
+.pest-detail-header {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.pest-detail-icon {
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 17px;
+
+    font-size: 38px;
+}
+
+
+.pest-detail-title {
+    flex: 1;
+}
+
+
+.pest-detail-title h2 {
+    margin: 7px 0 10px;
+
+    color: #14532d;
+
+    font-size: 29px;
+    font-weight: 800;
+}
+
+
+.pest-detail-meta {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.pest-detail-divider {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: #e2e8f0;
+}
+
+
+/* =========================================================
+   DETAIL BLOCKS
+   ========================================================= */
+
+.pest-detail-block {
+    margin-bottom: 25px;
+
+    padding: 20px;
+
+    background: #f8faf9;
+
+    border: 1px solid #e2ebe3;
+    border-radius: 14px;
+}
+
+
+.pest-detail-block:last-of-type {
+    margin-bottom: 25px;
+}
+
+
+.detail-block-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+
+.detail-block-title span {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dcfce7;
+
+    border-radius: 9px;
+
+    font-size: 17px;
+}
+
+
+.detail-block-title h3 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.pest-detail-block ul {
+    margin: 0;
+
+    padding-left: 22px;
+}
+
+
+.pest-detail-block li {
+    margin-bottom: 8px;
+
+    color: #475569;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.pest-detail-block li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   ADVISORY NOTE
+   ========================================================= */
+
+.pest-advisory-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+    border-radius: 13px;
+}
+
+
+.note-icon {
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+.pest-advisory-note strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #92400e;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.pest-advisory-note p {
+    margin: 0;
+
+    color: #78350f;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .pest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pest-page {
+        padding-top: 30px;
+    }
+
+    .pest-hero h1 {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .pest-page {
+        padding: 25px 0 50px;
+    }
+
+    .pest-hero,
+    .pest-filter-card,
+    .pest-results,
+    .pest-detail-section,
+    .pest-error {
+        width: 94%;
+    }
+
+    .pest-hero-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 32px;
+    }
+
+    .pest-hero h1 {
+        font-size: 27px;
+    }
+
+    .pest-hero p {
+        font-size: 14px;
+    }
+
+    .pest-filter-card {
+        padding: 20px;
+    }
+
+    .pest-filter-header {
+        align-items: flex-start;
+    }
+
+    .pest-filter-header h2 {
+        font-size: 23px;
+    }
+
+    .pest-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pest-results-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pest-results-header h2 {
+        font-size: 24px;
+    }
+
+    .pest-count {
+        align-self: flex-start;
+    }
+
+    .pest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pest-detail-card {
+        padding: 20px;
+    }
+
+    .pest-detail-header {
+        align-items: flex-start;
+    }
+
+    .pest-detail-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 30px;
+    }
+
+    .pest-detail-title h2 {
+        font-size: 23px;
+    }
+
+    .pest-detail-block {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .pest-hero h1 {
+        font-size: 24px;
+    }
+
+    .pest-filter-header {
+        flex-direction: column;
+    }
+
+    .pest-filter-icon {
+        display: none;
+    }
+
+    .pest-card {
+        padding: 18px;
+    }
+
+    .pest-card h3 {
+        font-size: 19px;
+    }
+
+    .pest-detail-header {
+        flex-direction: column;
+    }
+
+    .pest-detail-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pest-detail-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pest-advisory-note {
+        padding: 15px;
+    }
+}

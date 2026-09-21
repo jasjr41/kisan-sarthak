@@ -1,0 +1,345 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 32px;
+
+    box-sizing: border-box;
+
+    background: #14532d;
+
+    border-bottom: 1px solid #0f3d22;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+.navbar-links a {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 11px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-links a:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #dcfce7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ACTIVE / FOCUS LINK
+========================================================= */
+
+.navbar-links a:focus-visible {
+    outline: 2px solid #86efac;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   USER SECTION
+========================================================= */
+
+.navbar-user-section {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   USER NAME
+========================================================= */
+
+.navbar-user {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 8px 10px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.navbar-logout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.navbar-logout-button:hover {
+    background: #b91c1c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(220, 38, 38, 0.25);
+}
+
+.navbar-logout-button:active {
+    transform: translateY(0);
+}
+
+.navbar-logout-button:focus-visible {
+    outline: 2px solid #fecaca;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+    .navbar-links {
+        gap: 3px;
+    }
+
+    .navbar-links a {
+        padding: 8px 8px;
+
+        font-size: 12px;
+    }
+
+    .navbar-user {
+        font-size: 12px;
+    }
+
+    .navbar-logout-button {
+        font-size: 12px;
+
+        padding: 8px 10px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 15px 20px;
+    }
+
+    .navbar-logo {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .navbar-links {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 14px 12px;
+
+        gap: 12px;
+    }
+
+    .navbar-logo {
+        font-size: 17px;
+
+        text-align: center;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 5px;
+    }
+
+    .navbar-links a {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 10px;
+
+        font-size: 13px;
+
+        box-sizing: border-box;
+    }
+
+    .navbar-user-section {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-left: 0;
+    }
+
+    .navbar-user {
+        width: 100%;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    .navbar-logout-button {
+        width: 100%;
+
+        padding: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        padding: 12px 10px;
+    }
+
+    .navbar-logo {
+        font-size: 15px;
+    }
+
+    .navbar-links a {
+        font-size: 12px;
+    }
+}

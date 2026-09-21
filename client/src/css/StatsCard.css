@@ -1,0 +1,86 @@
+/* =================================
+   DASHBOARD STATISTICS
+================================= */
+
+.stats-section {
+  width: 85%;
+
+  max-width: 1000px;
+
+  margin: 25px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 30px;
+}
+
+.stat-item p {
+  margin-bottom: 5px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.stat-item h3 {
+  margin: 0;
+
+  font-size: 21px;
+
+  color: #1e293b;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .stats-section {
+    grid-template-columns: 1fr;
+
+    width: 90%;
+  }
+
+}

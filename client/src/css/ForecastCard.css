@@ -1,0 +1,243 @@
+/* =================================
+   FORECAST CARD
+================================= */
+
+.forecast-card {
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: 20px auto;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 15px;
+}
+
+.forecast-item {
+  padding: 10px;
+
+  background: #f8fafc;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.forecast-item:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-date {
+  font-weight: 700;
+
+  color: #1e293b;
+}
+
+.forecast-icon {
+  font-size: 42px;
+
+  margin: 15px 0;
+}
+
+.forecast-item h3 {
+  margin: 10px 0 5px;
+
+  font-size: 26px;
+}
+
+.min-temp {
+  color: #64748b;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+.forecast-description {
+  text-transform: capitalize;
+
+  color: #64748b;
+
+  margin-bottom: 15px;
+}
+
+.forecast-info {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.forecast-rain {
+  margin-top: 15px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #e2e8f0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #15803d;
+}
+
+
+/* =================================
+   FARMING IMPACT
+================================= */
+
+.farming-impact {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 15px;
+
+  padding: 10px;
+
+  background: #f0fdf4;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  color: #166534;
+}
+
+.farming-impact span {
+  font-size: 16px;
+}
+
+.farming-impact strong {
+  font-weight: 600;
+}
+
+
+/* =================================
+   RAIN INFORMATION
+================================= */
+
+.rain-info {
+  margin-top: 10px;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  color: #0284c7 !important;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   5-DAY FORECAST DASHBOARD FIX
+   ========================================================= */
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.forecast-item {
+    min-width: 0;
+    padding: 14px 10px;
+}
+
+.forecast-date {
+    font-size: 12px;
+}
+
+.forecast-icon {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.forecast-item h3 {
+    font-size: 18px;
+}
+
+.forecast-description {
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.forecast-info {
+    font-size: 11px;
+}
+
+.farming-impact {
+    font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+    .forecast-grid {
+        grid-template-columns: repeat(5, 145px);
+        overflow-x: auto;
+    }
+
+    .forecast-item {
+        min-width: 145px;
+    }
+}
+
+@media (max-width: 600px) {
+    .forecast-grid {
+        grid-template-columns: repeat(5, 145px);
+        overflow-x: auto;
+    }
+}
