@@ -363,7 +363,7 @@
     .navbar-links a {
         padding: 8px 11px;
 
-        font-size: 13px;
+        font-size: 10px;
     }
 
     .navbar-user {
@@ -373,9 +373,9 @@
     }
 
     .navbar-logout-button {
-        font-size: 13px;
+        font-size: 12px;
 
-        padding: 8px 12px;
+        padding: 8px 11px;
     }
 }
 
