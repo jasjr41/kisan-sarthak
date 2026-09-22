@@ -26,6 +26,7 @@ function Navbar() {
             <div className="navbar-logo">
                 🌾 Smart Farming Advisor
             </div>
+            <br />
 
             {/* MOBILE MENU BUTTON */}
             <button
