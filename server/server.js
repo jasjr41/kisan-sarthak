@@ -2,23 +2,37 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const weatherRoutes = require("./routes/weatherRoutes");
-const cropRoutes = require("./routes/cropRoutes");
-const fertilizerRoutes = require("./routes/fertilizerRoutes");
-const deficiencyRoutes = require("./routes/deficiencyRoutes");
-const pestDiseaseRoutes = require("./routes/pestDiseaseRoutes");
-const farmRoutes = require("./routes/farmRoutes");
-const authRoutes = require("./routes/authRoutes");
-const farmingHistoryRoutes = require("./routes/farmingHistoryRoutes");
-const aiRoutes = require("./routes/aiRoutes");
-
 const connectDB = require("./config/db.js");
+
+const weatherRoutes = require("./routes/weatherRoutes.js");
+const cropRoutes = require("./routes/cropRoutes.js");
+const fertilizerRoutes = require("./routes/fertilizerRoutes.js");
+const deficiencyRoutes = require("./routes/deficiencyRoutes.js");
+const pestDiseaseRoutes = require("./routes/pestDiseaseRoutes.js");
+const farmRoutes = require("./routes/farmRoutes.js");
+const authRoutes = require("./routes/authRoutes.js");
+const farmingHistoryRoutes = require("./routes/farmingHistoryRoutes.js");
+const aiRoutes = require("./routes/aiRoutes.js");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Connect to MongoDB before handling API requests
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error("Database connection error:", error.message);
+
+        return res.status(500).json({
+            success: false,
+            message: "Database connection failed"
+        });
+    }
+});
 
 // Routes
 app.use("/api/weather", weatherRoutes);
@@ -31,24 +45,26 @@ app.use("/api/auth", authRoutes);
 app.use("/api/farming-history", farmingHistoryRoutes);
 app.use("/api/ai", aiRoutes);
 
-// Test route
+// Root route
 app.get("/", (req, res) => {
     res.json({
         message: "Smart Farming Advisor API is running"
     });
 });
 
-// Connect to MongoDB
-connectDB();
-
 // Local development
-const PORT = process.env.PORT || 5000;
-
 if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
+    const PORT = process.env.PORT || 5000;
+
+    connectDB()
+        .then(() => {
+            app.listen(PORT, () => {
+                console.log(`Server running on port ${PORT}`);
+            });
+        })
+        .catch((error) => {
+            console.error("Failed to start server:", error.message);
+        });
 }
 
-// Export Express app for Vercel
 module.exports = app;
