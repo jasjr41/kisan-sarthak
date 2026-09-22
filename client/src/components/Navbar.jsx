@@ -22,11 +22,17 @@ function Navbar() {
     return (
         <nav className="navbar">
 
-            {/* LOGO */}
-            <div className="navbar-logo">
-                🌾 Smart Farming Advisor
+            {/* APP TITLE */}
+            <div className="navbar-brand">
+                <div className="navbar-logo">
+                    🌾 KISAN SARTHAK: Smart Weather
+                </div>
+
+                <div className="navbar-subtitle">
+                    Weather-Based Farming Advisor
+                </div>
             </div>
-            <br />
+
 
             {/* MOBILE MENU BUTTON */}
             <button
@@ -39,12 +45,14 @@ function Navbar() {
                 {menuOpen ? "✕" : "☰"}
             </button>
 
-            {/* NAVIGATION */}
+
+            {/* NAVIGATION LINKS */}
             <div
                 className={`navbar-links ${
                     menuOpen ? "navbar-links-open" : ""
                 }`}
             >
+
                 <Link to="/" onClick={closeMenu}>
                     🏠 Home
                 </Link>
@@ -77,6 +85,8 @@ function Navbar() {
                     ℹ️ About
                 </Link>
 
+
+                {/* USER */}
                 {token ? (
                     <div className="navbar-user-section">
 
@@ -98,7 +108,9 @@ function Navbar() {
                         🔐 Login
                     </Link>
                 )}
+
             </div>
+
         </nav>
     );
 }

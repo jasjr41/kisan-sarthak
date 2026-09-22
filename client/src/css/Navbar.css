@@ -1,16 +1,24 @@
 /* =========================================================
-   NAVBAR
+   SMART WEATHER - NAVBAR
+========================================================= */
+
+
+/* =========================================================
+   NAVBAR CONTAINER
 ========================================================= */
 
 .navbar {
     width: 100%;
-    min-height: 68px;
+
+    min-height: 125px;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 
-    padding: 12px 28px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px 10px;
 
     box-sizing: border-box;
 
@@ -22,28 +30,84 @@
         0 4px 15px rgba(0, 0, 0, 0.08);
 
     position: relative;
-    z-index: 1000;
 
-    overflow: visible;
+    z-index: 1000;
 }
 
 
 /* =========================================================
-   LOGO
+   APPLICATION TITLE / BRAND
 ========================================================= */
 
-.navbar-logo {
+.navbar-brand {
     display: flex;
+
+    flex-direction: column;
+
     align-items: center;
 
+    justify-content: center;
+
+    text-align: center;
+
+    width: 100%;
+
+    margin-bottom: 9px;
+}
+
+
+/* Main title */
+
+.navbar-logo {
     color: #ffffff;
 
-    font-size: 20px;
+    font-size: 25px;
+
     font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.3px;
 
     white-space: nowrap;
 
-    flex-shrink: 0;
+    cursor: default;
+}
+
+
+/* Subtitle */
+
+.navbar-subtitle {
+    margin-top: 3px;
+
+    color: #bbf7d0;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS CONTAINER
+========================================================= */
+
+.navbar-links {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    flex-wrap: nowrap;
 }
 
 
@@ -51,35 +115,21 @@
    NAVIGATION LINKS
 ========================================================= */
 
-.navbar-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 3px;
-
-    flex: 1;
-
-    min-width: 0;
-
-    margin-left: 15px;
-
-    flex-wrap: nowrap;
-}
-
-
 .navbar-links a {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 8px 9px;
+    padding: 8px 10px;
 
     color: #ffffff;
 
     text-decoration: none;
 
     font-size: 12px;
+
     font-weight: 600;
 
     border-radius: 8px;
@@ -93,6 +143,8 @@
 }
 
 
+/* Link hover */
+
 .navbar-links a:hover {
     background: rgba(255, 255, 255, 0.12);
 
@@ -101,6 +153,8 @@
     transform: translateY(-1px);
 }
 
+
+/* Link focus */
 
 .navbar-links a:focus-visible {
     outline: 2px solid #86efac;
@@ -115,7 +169,10 @@
 
 .navbar-user-section {
     display: flex;
+
     align-items: center;
+
+    justify-content: center;
 
     gap: 7px;
 
@@ -131,11 +188,14 @@
 
 .navbar-user {
     display: inline-flex;
+
     align-items: center;
+
+    justify-content: center;
 
     gap: 5px;
 
-    padding: 7px 9px;
+    padding: 7px 10px;
 
     color: #ffffff;
 
@@ -146,6 +206,7 @@
     border-radius: 8px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     white-space: nowrap;
@@ -160,6 +221,7 @@
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     border: none;
@@ -168,11 +230,12 @@
 
     color: #ffffff;
 
-    padding: 7px 10px;
+    padding: 7px 11px;
 
     border-radius: 8px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -188,6 +251,8 @@
 }
 
 
+/* Logout hover */
+
 .navbar-logout-button:hover {
     background: #b91c1c;
 
@@ -198,10 +263,14 @@
 }
 
 
+/* Logout active */
+
 .navbar-logout-button:active {
     transform: translateY(0);
 }
 
+
+/* Logout focus */
 
 .navbar-logout-button:focus-visible {
     outline: 2px solid #fecaca;
@@ -211,16 +280,18 @@
 
 
 /* =========================================================
-   HAMBURGER BUTTON
+   HAMBURGER MENU BUTTON
 ========================================================= */
 
 .navbar-menu-button {
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     width: 42px;
+
     height: 42px;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -238,18 +309,74 @@
     cursor: pointer;
 
     flex-shrink: 0;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
+
+/* Hamburger hover */
 
 .navbar-menu-button:hover {
     background: rgba(255, 255, 255, 0.16);
+
+    transform: scale(1.04);
 }
 
+
+/* Hamburger focus */
 
 .navbar-menu-button:focus-visible {
     outline: 2px solid #86efac;
 
     outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1451px) {
+
+    .navbar {
+        min-height: 125px;
+
+        padding-top: 15px;
+
+        padding-bottom: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 26px;
+    }
+
+    .navbar-subtitle {
+        font-size: 11px;
+    }
+
+    .navbar-links {
+        gap: 6px;
+    }
+
+    .navbar-links a {
+        padding: 8px 11px;
+
+        font-size: 13px;
+    }
+
+    .navbar-user {
+        font-size: 13px;
+
+        padding: 8px 11px;
+    }
+
+    .navbar-logout-button {
+        font-size: 13px;
+
+        padding: 8px 12px;
+    }
 }
 
 
@@ -260,25 +387,70 @@
 @media (max-width: 1450px) {
 
     .navbar {
+        min-height: 72px;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
         padding: 11px 20px;
     }
 
-    /* Hide desktop links */
+
+    /* Brand moves to left */
+
+    .navbar-brand {
+        width: auto;
+
+        align-items: flex-start;
+
+        text-align: left;
+
+        margin-bottom: 0;
+
+        flex-shrink: 0;
+    }
+
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+
+    .navbar-subtitle {
+        font-size: 10px;
+    }
+
+
+    /* Show hamburger */
+
+    .navbar-menu-button {
+        display: flex;
+    }
+
+
+    /* Mobile/tablet menu */
+
     .navbar-links {
         position: absolute;
 
         top: 100%;
+
         left: 0;
 
         width: 100%;
 
         display: flex;
+
         flex-direction: column;
+
         align-items: stretch;
 
-        gap: 5px;
+        justify-content: flex-start;
 
-        margin-left: 0;
+        gap: 5px;
 
         padding: 12px 20px 16px;
 
@@ -319,25 +491,20 @@
     }
 
 
-    /* Hamburger */
-
-    .navbar-menu-button {
-        display: flex;
-    }
-
-
     /* Menu links */
 
     .navbar-links a {
         width: 100%;
 
+        display: flex;
+
         justify-content: flex-start;
 
         padding: 11px 13px;
 
-        font-size: 14px;
-
         box-sizing: border-box;
+
+        font-size: 14px;
     }
 
 
@@ -351,6 +518,8 @@
     .navbar-user-section {
         width: 100%;
 
+        display: flex;
+
         flex-direction: column;
 
         align-items: stretch;
@@ -363,6 +532,8 @@
     }
 
 
+    /* User */
+
     .navbar-user {
         width: 100%;
 
@@ -371,13 +542,19 @@
         box-sizing: border-box;
 
         padding: 10px 13px;
+
+        font-size: 13px;
     }
 
+
+    /* Logout */
 
     .navbar-logout-button {
         width: 100%;
 
         padding: 10px;
+
+        font-size: 13px;
     }
 }
 
@@ -389,24 +566,53 @@
 @media (max-width: 600px) {
 
     .navbar {
-        min-height: 62px;
+        min-height: 66px;
 
         padding: 10px 12px;
     }
 
 
-    .navbar-logo {
-        font-size: 16px;
+    /* Brand */
+
+    .navbar-brand {
+        max-width: calc(100% - 55px);
     }
 
 
+    .navbar-logo {
+        font-size: 17px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        max-width: 100%;
+    }
+
+
+    .navbar-subtitle {
+        font-size: 9px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        max-width: 100%;
+    }
+
+
+    /* Hamburger */
+
     .navbar-menu-button {
         width: 40px;
+
         height: 40px;
 
         font-size: 22px;
     }
 
+
+    /* Menu */
 
     .navbar-links {
         padding: 10px 12px 14px;
@@ -418,6 +624,54 @@
 
         padding: 10px 12px;
     }
+
+
+    .navbar-user {
+        font-size: 13px;
+    }
+
+
+    .navbar-logout-button {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        padding: 9px 10px;
+    }
+
+
+    .navbar-logo {
+        font-size: 15px;
+    }
+
+
+    .navbar-subtitle {
+        font-size: 8px;
+    }
+
+
+    .navbar-menu-button {
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 20px;
+    }
+
+
+    .navbar-links a {
+        font-size: 12px;
+
+        padding: 9px 11px;
+    }
 }
 
 
@@ -425,17 +679,14 @@
    VERY SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 360px) {
+@media (max-width: 330px) {
 
     .navbar-logo {
         font-size: 14px;
     }
 
 
-    .navbar-menu-button {
-        width: 38px;
-        height: 38px;
-
-        font-size: 20px;
+    .navbar-subtitle {
+        display: none;
     }
 }
