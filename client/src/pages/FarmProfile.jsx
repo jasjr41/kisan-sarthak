@@ -48,18 +48,26 @@ function FarmProfile() {
                 const token = localStorage.getItem("token");
 
                 if (!token) {
-                    setError("Please login to access your farm profile.");
+                    setError(
+                        "Please login to access your farm profile."
+                    );
                     return;
                 }
 
-                // Load logged-in user
+                // ==========================================
+                // LOAD LOGGED-IN USER
+                // ==========================================
+
                 const storedUser = localStorage.getItem("user");
 
                 if (storedUser) {
                     setUser(JSON.parse(storedUser));
                 }
 
-                // Load user's farm
+                // ==========================================
+                // LOAD USER'S FARM
+                // ==========================================
+
                 const response = await axios.get(
                     `${import.meta.env.VITE_API_URL}/api/farms`,
                     getAuthConfig()
@@ -85,7 +93,10 @@ function FarmProfile() {
                     });
                 }
             } catch (error) {
-                console.error("Error loading farm profile:", error);
+                console.error(
+                    "Error loading farm profile:",
+                    error
+                );
 
                 if (error.response?.status === 401) {
                     setError(
@@ -131,10 +142,16 @@ function FarmProfile() {
         setSaving(true);
 
         try {
+            // ==========================================
+            // CHECK LOGIN TOKEN
+            // ==========================================
+
             const token = localStorage.getItem("token");
 
             if (!token) {
-                setError("Please login before saving your farm.");
+                setError(
+                    "Please login before saving your farm."
+                );
                 setSaving(false);
                 return;
             }
@@ -144,7 +161,7 @@ function FarmProfile() {
                 farmSize: Number(formData.farmSize)
             };
 
-            // UPDATE
+
             if (farmId) {
                 const response = await axios.put(
                     `${import.meta.env.VITE_API_URL}/api/farms/${farmId}`,
@@ -158,11 +175,17 @@ function FarmProfile() {
                 );
             }
 
-            // CREATE
+          
+
             else {
                 const response = await axios.post(
-                    `${import.meta.env.VITE_API_URL}/api/farming-history`,
-                    setFarmId(response.data.data._id));
+                    `${import.meta.env.VITE_API_URL}/api/farms`,
+                    data,
+                    getAuthConfig()
+                );
+
+                // Save newly created farm ID
+                setFarmId(response.data.data._id);
 
                 setMessage(
                     response.data.message ||
@@ -170,7 +193,10 @@ function FarmProfile() {
                 );
             }
         } catch (error) {
-            console.error("Error saving farm:", error);
+            console.error(
+                "Error saving farm:",
+                error
+            );
 
             if (error.response?.status === 401) {
                 setError(
@@ -195,15 +221,19 @@ function FarmProfile() {
         return (
             <main className="farm-profile-page">
                 <section className="farm-profile-loading-card">
+
                     <div className="farm-profile-loading-icon">
                         🌾
                     </div>
 
-                    <h2>Loading Your Farm Profile</h2>
+                    <h2>
+                        Loading Your Farm Profile
+                    </h2>
 
                     <p>
                         Fetching your saved farm information...
                     </p>
+
                 </section>
             </main>
         );
@@ -227,19 +257,24 @@ function FarmProfile() {
                 </div>
 
                 <div>
+
                     <p className="farm-profile-eyebrow">
                         PERSONALIZED FARM PROFILE
                     </p>
 
                     <h1>
                         Welcome,{" "}
-                        {user?.name || formData.farmerName || "Farmer"} 🌾
+                        {user?.name ||
+                            formData.farmerName ||
+                            "Farmer"}{" "}
+                        🌾
                     </h1>
 
                     <p>
                         Manage your farm information and receive
                         personalized agricultural recommendations.
                     </p>
+
                 </div>
 
             </section>
@@ -264,7 +299,9 @@ function FarmProfile() {
                 <section className="farm-summary-section">
 
                     <div className="farm-summary-header">
+
                         <div>
+
                             <p className="farm-summary-eyebrow">
                                 FARM OVERVIEW
                             </p>
@@ -277,11 +314,13 @@ function FarmProfile() {
                                 Your saved farm information is used
                                 to personalize weather and farming advice.
                             </p>
+
                         </div>
 
                         <div className="farm-summary-badge">
                             🌱 Profile Active
                         </div>
+
                     </div>
 
 
@@ -296,10 +335,16 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Farmer</span>
+
+                                <span>
+                                    Farmer
+                                </span>
+
                                 <strong>
-                                    {formData.farmerName || "Not set"}
+                                    {formData.farmerName ||
+                                        "Not set"}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -314,10 +359,16 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Location</span>
+
+                                <span>
+                                    Location
+                                </span>
+
                                 <strong>
-                                    {formData.location || "Not set"}
+                                    {formData.location ||
+                                        "Not set"}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -332,10 +383,15 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Current Crop</span>
+
+                                <span>
+                                    Current Crop
+                                </span>
+
                                 <strong>
                                     {formData.crop}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -350,12 +406,17 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Farm Size</span>
+
+                                <span>
+                                    Farm Size
+                                </span>
+
                                 <strong>
                                     {formData.farmSize
                                         ? `${formData.farmSize} acres`
                                         : "Not set"}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -370,10 +431,15 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Soil Type</span>
+
+                                <span>
+                                    Soil Type
+                                </span>
+
                                 <strong className="capitalize-text">
                                     {formData.soilType}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -388,10 +454,15 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Growth Stage</span>
+
+                                <span>
+                                    Growth Stage
+                                </span>
+
                                 <strong className="capitalize-text">
                                     {formData.growthStage}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -406,10 +477,15 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Farming Activity</span>
+
+                                <span>
+                                    Farming Activity
+                                </span>
+
                                 <strong className="capitalize-text">
                                     {formData.farmingActivity}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -424,10 +500,16 @@ function FarmProfile() {
                             </div>
 
                             <div>
-                                <span>Account</span>
+
+                                <span>
+                                    Account
+                                </span>
+
                                 <strong>
-                                    {user?.email || "Logged in"}
+                                    {user?.email ||
+                                        "Logged in"}
                                 </strong>
+
                             </div>
 
                         </div>
@@ -447,6 +529,7 @@ function FarmProfile() {
                 <div className="farm-profile-card-header">
 
                     <div>
+
                         <p className="farm-profile-card-eyebrow">
                             FARM INFORMATION
                         </p>
@@ -461,6 +544,7 @@ function FarmProfile() {
                             Keep your farm information updated so the
                             advisory system can provide relevant recommendations.
                         </p>
+
                     </div>
 
                     <div className="farm-profile-card-icon">
@@ -527,16 +611,39 @@ function FarmProfile() {
                                 value={formData.crop}
                                 onChange={handleChange}
                             >
-                                <option value="Wheat">Wheat</option>
-                                <option value="Rice">Rice</option>
-                                <option value="Maize">Maize</option>
-                                <option value="Potato">Potato</option>
-                                <option value="Tomato">Tomato</option>
-                                <option value="Cotton">Cotton</option>
-                                <option value="Mustard">Mustard</option>
+
+                                <option value="Wheat">
+                                    Wheat
+                                </option>
+
+                                <option value="Rice">
+                                    Rice
+                                </option>
+
+                                <option value="Maize">
+                                    Maize
+                                </option>
+
+                                <option value="Potato">
+                                    Potato
+                                </option>
+
+                                <option value="Tomato">
+                                    Tomato
+                                </option>
+
+                                <option value="Cotton">
+                                    Cotton
+                                </option>
+
+                                <option value="Mustard">
+                                    Mustard
+                                </option>
+
                                 <option value="Sugarcane">
                                     Sugarcane
                                 </option>
+
                             </select>
 
                         </div>
@@ -555,6 +662,7 @@ function FarmProfile() {
                                 value={formData.soilType}
                                 onChange={handleChange}
                             >
+
                                 <option value="loamy">
                                     Loamy
                                 </option>
@@ -578,6 +686,7 @@ function FarmProfile() {
                                 <option value="red">
                                     Red Soil
                                 </option>
+
                             </select>
 
                         </div>
@@ -618,6 +727,7 @@ function FarmProfile() {
                                 value={formData.growthStage}
                                 onChange={handleChange}
                             >
+
                                 <option value="seedling">
                                     Seedling
                                 </option>
@@ -641,6 +751,7 @@ function FarmProfile() {
                                 <option value="harvesting">
                                     Harvesting
                                 </option>
+
                             </select>
 
                         </div>
@@ -659,6 +770,7 @@ function FarmProfile() {
                                 value={formData.farmingActivity}
                                 onChange={handleChange}
                             >
+
                                 <option value="general">
                                     General Farming
                                 </option>
@@ -682,6 +794,7 @@ function FarmProfile() {
                                 <option value="harvesting">
                                     Harvesting
                                 </option>
+
                             </select>
 
                         </div>
@@ -705,11 +818,13 @@ function FarmProfile() {
                         className="farm-save-button"
                         disabled={saving}
                     >
+
                         {saving
                             ? "Saving..."
                             : farmId
                                 ? "✏️ Update Farm Profile"
                                 : "💾 Create Farm Profile"}
+
                     </button>
 
                 </form>
@@ -728,6 +843,7 @@ function FarmProfile() {
                 </div>
 
                 <div>
+
                     <h3>
                         How your profile improves recommendations
                     </h3>
@@ -738,6 +854,7 @@ function FarmProfile() {
                         system to provide more relevant weather-based
                         farming recommendations.
                     </p>
+
                 </div>
 
             </section>

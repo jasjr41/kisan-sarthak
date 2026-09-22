@@ -35,18 +35,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/farming-history", farmingHistoryRoutes);
 app.use("/api/ai", aiRoutes);
 
-// Vercel handler
 module.exports = async (req, res) => {
     try {
         await connectDB();
-
         return app(req, res);
     } catch (error) {
-        console.error(
-            "Database connection failed:",
-            error.message
-        );
-
         return res.status(500).json({
             success: false,
             message: "Database connection failed"
