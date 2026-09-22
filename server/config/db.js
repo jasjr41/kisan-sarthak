@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
-let isConnected = false;
+let cachedConnection = null;
 
 const connectDB = async () => {
-    if (isConnected && mongoose.connection.readyState === 1) {
-        return;
+    if (cachedConnection) {
+        return cachedConnection;
     }
 
     try {
-        await mongoose.connect(process.env.MONGO_URI);
-
-        isConnected = true;
+        cachedConnection = await mongoose.connect(process.env.MONGO_URI);
 
         console.log("MongoDB connected successfully");
+
+        return cachedConnection;
     } catch (error) {
-        isConnected = false;
+        cachedConnection = null;
 
         console.error(
             "MongoDB connection failed:",
-            error
+            error.message
         );
 
         throw error;
