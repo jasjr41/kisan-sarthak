@@ -5,14 +5,17 @@ let cachedConnection = null;
 const connectDB = async () => {
     console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
 
-    if (cachedConnection && mongoose.connection.readyState === 1) {
+    if (
+        cachedConnection &&
+        mongoose.connection.readyState === 1
+    ) {
         console.log("Using existing MongoDB connection");
         return cachedConnection;
     }
 
-    try {
-        console.log("Attempting MongoDB connection...");
+    console.log("Attempting MongoDB connection...");
 
+    try {
         cachedConnection = await mongoose.connect(
             process.env.MONGO_URI,
             {
