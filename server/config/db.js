@@ -3,27 +3,42 @@ const mongoose = require("mongoose");
 let cachedConnection = null;
 
 const connectDB = async () => {
-    if (cachedConnection) {
+    console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
+
+    if (cachedConnection && mongoose.connection.readyState === 1) {
+        console.log("Using existing MongoDB connection");
         return cachedConnection;
     }
 
     try {
-        cachedConnection = await mongoose.connect(process.env.MONGO_URI);
+        console.log("Attempting MongoDB connection...");
 
-        console.log("MongoDB connected successfully");
+        cachedConnection = await mongoose.connect(
+            process.env.MONGO_URI,
+            {
+                serverSelectionTimeoutMS: 10000,
+                connectTimeoutMS: 10000
+            }
+        );
+
+        console.log(
+            "MongoDB connected successfully:",
+            mongoose.connection.host
+        );
 
         return cachedConnection;
+
     } catch (error) {
         cachedConnection = null;
 
         console.error(
             "MongoDB connection failed:",
+            error.name,
             error.message
         );
 
         throw error;
     }
 };
-console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
 
 module.exports = connectDB;
