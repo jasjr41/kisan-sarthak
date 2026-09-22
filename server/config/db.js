@@ -24,5 +24,6 @@ const connectDB = async () => {
         throw error;
     }
 };
+console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
 
 module.exports = connectDB;
