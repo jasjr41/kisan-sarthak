@@ -21,10 +21,12 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FarmingHistory from "./pages/FarmingHistory";
 import Weather from "./pages/Weather";
+import About from "./pages/About";
 
 import "./css/App.css";
 import "./css/Weather.css";
 import "./css/AIChat.css";
+import "./css/About.css";
 import "./css/Navbar.css";
 import "./css/SearchForm.css";
 import "./css/WeatherCard.css";
@@ -1005,6 +1007,7 @@ function App() {
                         <FarmingHistory />
                     }
                 />
+                <Route path="/about" element={<About />} />
 
             </Routes>
 

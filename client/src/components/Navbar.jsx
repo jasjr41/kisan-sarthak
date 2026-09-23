@@ -77,13 +77,11 @@ function Navbar() {
                     🌿 Pest & Disease
                 </Link>
 
-                <Link to="/" onClick={closeMenu}>
-                    📋 Advisory
-                </Link>
+               
 
-                <Link to="/" onClick={closeMenu}>
-                    ℹ️ About
-                </Link>
+                <Link to="/about" onClick={closeMenu}>
+    ℹ️ About
+</Link>
 
 
                 {/* USER */}
