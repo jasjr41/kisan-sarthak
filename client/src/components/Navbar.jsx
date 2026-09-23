@@ -57,7 +57,7 @@ function Navbar() {
                     🏠 Home
                 </Link>
 
-                <Link to="/" onClick={closeMenu}>
+                <Link to="/weather" onClick={closeMenu}>
                     🌦️ Weather
                 </Link>
 

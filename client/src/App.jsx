@@ -20,8 +20,10 @@ import PestDiseaseAdvisor from "./pages/PestDiseaseAdvisor";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FarmingHistory from "./pages/FarmingHistory";
+import Weather from "./pages/Weather";
 
 import "./css/App.css";
+import "./css/Weather.css";
 import "./css/AIChat.css";
 import "./css/Navbar.css";
 import "./css/SearchForm.css";
@@ -967,7 +969,7 @@ function App() {
                         <FarmProfile />
                     }
                 />
-
+                <Route path="/weather" element={<Weather />} />
 
                 {/* ==========================================
                     REGISTER

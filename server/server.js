@@ -13,6 +13,8 @@ const farmRoutes = require("./routes/farmRoutes.js");
 const authRoutes = require("./routes/authRoutes.js");
 const farmingHistoryRoutes = require("./routes/farmingHistoryRoutes.js");
 const aiRoutes = require("./routes/aiRoutes.js");
+const weatherDashboardRoutes = require("./routes/weatherDashboardRoutes");
+
 
 const app = express();
 
@@ -34,6 +36,10 @@ app.use("/api/farms", farmRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/farming-history", farmingHistoryRoutes);
 app.use("/api/ai", aiRoutes);
+app.use(
+    "/api/weather/dashboard",
+    weatherDashboardRoutes
+);
 
 module.exports = async (req, res) => {
     try {

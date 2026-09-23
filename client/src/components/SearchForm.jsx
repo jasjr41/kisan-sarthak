@@ -108,9 +108,9 @@ function SearchForm({
 
       </div>
 
-      <div className="location-divider">
+      {/* <div className="location-divider">
         <span>OR</span>
-      </div>
+      </div> */}
 
       <button
         className="location-button"
